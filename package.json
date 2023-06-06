@@ -1,0 +1,17 @@
+{
+  "name": "importstatustcpsocket",
+  "version": "1.0.0",
+  "description": "tcp service for sollist import status",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "j.hofmann",
+  "license": "ISC",
+  "dependencies": {
+    "jsonschema": "^1.4.1",
+    "mqemitter": "^5.0.0",
+    "mqtt": "^4.3.7",
+    "uuid": "^9.0.0"
+  }
+}

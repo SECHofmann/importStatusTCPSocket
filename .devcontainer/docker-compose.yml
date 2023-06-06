@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  importstatus-tcp:
+    image: reg.goetz-fm.com/devcontainer-node:latest
+    environment:
+      NODE_ENV: dev
+      PORT: 3000
+      GIT_USERNAME: 50c07960ff61120a506c07680c9b490791e475fe
+      GIT_REMOTE_URL: https://gitea.goetz-fm.com/Goetz-Management-Holding-AG/sollist_importstatws.git
+      GIT_USER_FULL_NAME: Julian Hofmann
+      GIT_USER_EMAIL: j.hofmann@goetz-fm.com
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - importstatuswebsocket:/code:cached
+      - vscode-extensions:/root/.vscode-server/extensions 
+      - vscode-extensions-insiders:/root/.vscode-server-insiders/extensions
+    networks:
+      - importstatuswebsocket_net
+volumes:
+  importstatuswebsocket:
+    driver: local
+  vscode-extensions:
+    driver: local
+  vscode-extensions-insiders:
+    driver: local
+networks:
+  importstatuswebsocket_net:
+    name: importstatuswebsocket_net
